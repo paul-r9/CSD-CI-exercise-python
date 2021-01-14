@@ -1,2 +1,2 @@
 def sanitize(isbn_number: str):
-    return "00201485672"
+    return isbn_number.replace(" ", "").replace("-", "")
