@@ -4,17 +4,15 @@ import unittest
 from isbn import ISBN
 
 
-class ISBNTest(unittest.TestCase):
-    def test_needs_a_better_name(self):
+class ISBNSanitizerTest(unittest.TestCase):
+    def test_string_sanitizer_removes_spaces(self):
         # Arrange
-        sut = ISBN()
- 
+        expected = "00201485672"
         # Act
-        result = sut.validate("9780470059029")
-
+        # result = sanitize("0 0201485672")
 
         # Assert
-        self.assertEqual(True, result)
+        # self.assertEqual(expected, result)
 
 
 if __name__ == '__main__':
