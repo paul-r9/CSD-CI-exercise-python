@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from isbn import ISBN
+from sanitizer import sanitize
 
 
-class ISBNSanitizerTest(unittest.TestCase):
+class SanitizerTest(unittest.TestCase):
     def test_string_sanitizer_removes_spaces(self):
         # Arrange
         expected = "00201485672"
         # Act
-        # result = sanitize("0 0201485672")
-
+        result = sanitize("0 0201485672")
         # Assert
-        # self.assertEqual(expected, result)
+        self.assertEqual(expected, result)
 
 
 if __name__ == '__main__':
