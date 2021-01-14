@@ -19,7 +19,7 @@ class SanitizerTest(unittest.TestCase):
         # Act
         result = sanitize("978-0596809485")
         # Assert
-        # self.assertEqual(expected, result)
+        self.assertEqual(expected, result)
 
 
 if __name__ == '__main__':
