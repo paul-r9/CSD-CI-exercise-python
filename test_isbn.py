@@ -44,9 +44,11 @@ class ISBNTest(unittest.TestCase):
         sut = ISBN()
 
         # Act
-        # result = sut.determine_isbn_type("00201485672")
+        sut.determine_isbn_type("00201485672")
 
         # Assert
+        self.assertEqual(expected, sut.is_isbn_ten)
+
 
 if __name__ == '__main__':
     unittest.main()
