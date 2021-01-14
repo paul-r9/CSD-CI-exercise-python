@@ -1,3 +1,5 @@
+from sanitizer import sanitize
+
 class ISBN:
 
     def validate(self, number):
