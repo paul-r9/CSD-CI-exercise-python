@@ -14,7 +14,7 @@ class ISBNTest(unittest.TestCase):
 
 
         # Assert
-        self.assertEquals(True, result)
+        self.assertEqual(True, result)
 
 
 if __name__ == '__main__':
