@@ -13,6 +13,14 @@ class SanitizerTest(unittest.TestCase):
         # Assert
         self.assertEqual(expected, result)
 
+    def test_string_sanitizer_removes_dashes(self):
+        # Arrange
+        expected = "9780596809485"
+        # Act
+        result = sanitize("978-0596809485")
+        # Assert
+        # self.assertEqual(expected, result)
+
 
 if __name__ == '__main__':
     unittest.main()
