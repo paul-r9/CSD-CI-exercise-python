@@ -27,5 +27,16 @@ class ISBNTest(unittest.TestCase):
         # Assert
         self.assertEqual(False, result)
 
+    def test_valid_isbn13_second(self):
+        # Arrange
+        sut = ISBN()
+ 
+        # Act
+        result = sut.validate("9780976423317")
+
+
+        # Assert
+        self.assertEqual(True, result)
+
 if __name__ == '__main__':
     unittest.main()
