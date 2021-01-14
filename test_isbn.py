@@ -8,7 +8,7 @@ class ISBNTest(unittest.TestCase):
     def test_needs_a_better_name(self):
         # Arrange
         sut = ISBN()
-
+ 
         # Act
         result = sut.validate("9780470059029")
 
