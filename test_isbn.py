@@ -60,3 +60,24 @@ def test_invalid_isbn13_is_too_long():
     result = sut.validate("97804700590294")
 
     assert not result
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        "abc-0-13-595705-9",
+        "978 ; === 49505 0",
+        "978 0 🙄3-595705-9",
+    ],
+)
+def test_invalid_isbn13_bad_inputs(value):
+
+    sut = ISBN()
+
+    try:
+        sut.validate(value)
+    except ValueError:
+        # value errors get raised with garbage inputs
+        pass
+    else:
+        assert False, "did not raise expected ValueError exception"
