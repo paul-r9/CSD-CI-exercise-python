@@ -33,7 +33,7 @@ def test_invalid_isbn13_checksum_wrong():
         ("978 0 13-595705-9", "9780135957059"),
     ],
 )
-def test_sanitize_input(value, expected):
+def test_sanitize_input_dashes_and_spaces(value, expected):
     # Arrange
     sut = ISBN()
 
