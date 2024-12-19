@@ -7,7 +7,7 @@ trigger:
 - trunk
 
 jobs:
-  - job: 'isbn-13'
+  - job: 'isbn_13'
     pool:
       vmImage: 'ubuntu-latest'
     strategy:
