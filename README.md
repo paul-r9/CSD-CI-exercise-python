@@ -35,7 +35,30 @@ The check digit for ISBN-13 is calculated by multiplying each digit alternately 
 Basic task:
 
 - [ ] Create a function that takes a string and returns true if that is a valid ISBN-13 and false otherwise.
+- [ ] Handle ISBN-13 strings with dashes
+- [ ] Handle ISBN-13 strings with spaces
 
 Advanced task:
 
-- [ ] Also return true if the string is a valid ISBN-10.
+- [ ] Also validate ISBN-10 strings.
+- [ ] ISBN-10 cehcksum digit can sometimes be "X"
+- [ ] Create a Fake that is passed into the ISBN class. The fake will act as an ISBNService that returns BookInfo for a valid ISBN.
+- Here is some valid BookInfo to use with the Fake. 
+
+| Title                                     | Author         | ISBN-10    | ISBN-13       |
+|-------------------------------------------|----------------|------------|---------------|
+| 97 Things Every Programmer Should Know    | Kevlin Henney  | 0596809484 | 9780596809485 |
+| Accelerate | Forsgren, Humble, Kim | 1942788339 | 9781942788331 |
+| Pattern-Oriented SW Architecture Vol 1 |Frank Buschmann |0471958697 | 9780471958697 |
+| Pattern-Oriented SW Architecture Vol 2 | Douglas Schmidt | 0471606952 | 9780471606956 |
+| Pattern-Oriented SW Architecture Vol 3 | Michael Kircher | 0478084525 | 9780470845257 |
+| Pattern-Oriented SW Architecture Vol 4 | Frank Buschmann | 0470059028 | 9780470059029 |
+| Pattern-Oriented SW Architecture Vol 5 | Frank Buschmann | 0471486485 | 9780471486480 |
+| Refactoring | Martin Fowler | 0201485672 | 9780201485677 |
+| Refactoring 2nd Edition | Martin Fowler | 0134757599 | 9780134757599 |
+| Test Driven Development by Example | Kent Beck | 0321146530 | 9780321146533 |
+| The Laws of Simplicity | John Maeda | 0262134721 | 9780262134729 |
+| The Thief Lord | Cornelia Funke | 043942089X  | 9780439420891 |
+| Working Effectively with Legacy Code | Michael Feathers | 0131177052 | 9780131177055 |
+| xUnit Test Patterns | Gerard Meszaros | 0131495054 | 9780131495050 |
+
