@@ -33,8 +33,8 @@ class ISBN:
         digits = [int(c) for c in digits]
 
         # [(1, digits[0]), (2, digits[1]), ...]
-        digit_sum_mod_10 = enumerate(digits, start=1)
-        digit_sum = sum([index * digit for (index, digit) in digit_sum_mod_10])
+        enumerated_digits = enumerate(digits, start=1)
+        digit_sum = sum([index * digit for (index, digit) in enumerated_digits])
 
         return (digit_sum % 11) == checksum
 
