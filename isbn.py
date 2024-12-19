@@ -22,6 +22,22 @@ class ISBN:
 
         return (digit_sum_mod_10_subtracted_from_10 % 10) == checksum
 
+    def validateISBN10(self, number):
+        digits = [c for c in self.sanitize_input(number)]
+        if len(digits) != 10:
+            return False
+
+        checksum = digits.pop()
+
+        checksum = 10 if checksum == 'X' else int(checksum)
+        digits = [int(c) for c in digits]
+
+        # [(1, digits[0]), (2, digits[1]), ...]
+        digit_sum_mod_10 = enumerate(digits, start=1)
+        digit_sum = sum([index * digit for (index, digit) in digit_sum_mod_10])
+
+        return (digit_sum % 11) == checksum
+
     def sanitize_input(self, value):
         """
         Remove dashes and spaces from input.

@@ -61,3 +61,19 @@ def test_invalid_isbn13_is_too_long():
     result = sut.validate("97804700590294")
 
     assert not result
+
+def test_valid_ISBN10():
+
+    sut = ISBN()
+
+    result = sut.validateISBN10("0201485672")
+
+    assert result
+
+def test_valid_ISBN10_X_at_end():
+
+    sut = ISBN()
+
+    result = sut.validateISBN10("0439-42089-X")
+
+    assert result
