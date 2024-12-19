@@ -61,6 +61,7 @@ def test_invalid_isbn13_is_too_long():
 
     assert not result
 
+
 def test_valid_ISBN10():
 
     sut = ISBN()
@@ -68,6 +69,7 @@ def test_valid_ISBN10():
     result = sut.validateISBN10("0201485672")
 
     assert result
+
 
 def test_valid_ISBN10_X_at_end():
 
