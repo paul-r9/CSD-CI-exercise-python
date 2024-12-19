@@ -11,23 +11,13 @@ def test_valid_isbn13():
     # Assert
     assert result
 
-# Uncomment when implementation is ready:
-# def test_invalid_isbn13():
-#     # Arrange
-#     sut = ISBN()
-
-#     # Act
-#     result = sut.validate("9780470059028")
-
-#     # Assert
-#     assert not result
 
 def test_invalid_isbn13_checksum_wrong():
     # Arrange
     sut = ISBN()
 
     # Act
-    result = sut.sanitize_input("978-0-13-595705-9")
+    result = sut.validate("978-0-13-595705-8")
 
     # Assert
     assert not result
