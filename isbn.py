@@ -13,7 +13,7 @@ class BookInfo:
 
 class ISBN:
 
-    def validate(self, number):
+    def validateISBN13(self, number):
         digits = [int(c) for c in self.sanitize_input(number)]
         if len(digits) != 13:
             return False

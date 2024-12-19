@@ -62,7 +62,7 @@ def test_valid_isbn13():
     sut = ISBN()
 
     # Act
-    result = sut.validate("9780470059029")
+    result = sut.validateISBN13("9780470059029")
 
     # Assert
     assert result
@@ -73,7 +73,7 @@ def test_invalid_isbn13_checksum_wrong():
     sut = ISBN()
 
     # Act
-    result = sut.validate("978-0-13-595705-8")
+    result = sut.validateISBN13("978-0-13-595705-8")
 
     # Assert
     assert not result
@@ -102,7 +102,7 @@ def test_invalid_isbn13_is_too_short():
 
     sut = ISBN()
 
-    result = sut.validate("982")
+    result = sut.validateISBN13("982")
 
     assert not result
 
@@ -111,7 +111,7 @@ def test_invalid_isbn13_is_too_long():
 
     sut = ISBN()
 
-    result = sut.validate("97804700590294")
+    result = sut.validateISBN13("97804700590294")
 
     assert not result
 
@@ -145,7 +145,7 @@ def test_invalid_isbn13_bad_inputs(value):
     sut = ISBN()
 
     try:
-        sut.validate(value)
+        sut.validateISBN13(value)
     except ValueError:
         # value errors get raised with garbage inputs
         pass
