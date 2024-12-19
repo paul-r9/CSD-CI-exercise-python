@@ -2,6 +2,16 @@ from functools import partial
 from itertools import chain
 from operator import mul
 
+from dataclasses import dataclass
+
+
+@dataclass
+class BookInfo:
+    title: str
+    author: str
+    isbn_10: str
+    isbn_13: str
+
 
 class ISBN:
 
