@@ -41,9 +41,11 @@ Basic task:
 Advanced task:
 
 - [ ] Also validate ISBN-10 strings.
-- [ ] ISBN-10 cehcksum digit can sometimes be "X"
-- [ ] Create a Fake that is passed into the ISBN class. The fake will act as an ISBNService that returns BookInfo for a valid ISBN.
-- Here is some valid BookInfo to use with the Fake. 
+- [ ] ISBN-10 checksum digit can sometimes be "X"
+- [ ] Add ability to lookup BookInfo by ISBN. ISBN should be validated before doing the Service lookup. Create a Fake that is passed into the ISBN class via constructor injection. The fake will act as an ISBNService that returns BookInfo for a valid ISBN.
+
+
+Here is some valid BookInfo to use with the Fake. 
 
 | Title                                     | Author         | ISBN-10    | ISBN-13       |
 |-------------------------------------------|----------------|------------|---------------|
