@@ -32,10 +32,9 @@ jobs:
         pytest
       displayName: 'pytest'
 
-    - script: |
-        pip install pytest coverage
-        cd isbn-13
-        coverage run -m pytest --junitxml=../reports/isbn-13-coverage.xml
-        coverage report
-      displayName: 'Run tests with coverage'
-
+#    - script: |
+#        pip install pytest coverage
+#        cd isbn-13
+#        coverage run -m pytest --junitxml=../reports/isbn-13-coverage.xml
+#        coverage report
+#      displayName: 'Run tests with coverage'
