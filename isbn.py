@@ -6,7 +6,8 @@ from operator import mul
 class ISBN:
 
     def validate(self, number):
-         if len(digits) != 13:
+        digits = self.sanitize_input(number)
+        if len(digits) != 13:
             return False
 
         checksum = digits.pop()
@@ -20,7 +21,6 @@ class ISBN:
         digit_sum_mod_10_subtracted_from_10 = 10 - digit_sum_mod_10
 
         return (digit_sum_mod_10_subtracted_from_10 % 10) == checksum
-
 
     def sanitize_input(self, value):
         """
