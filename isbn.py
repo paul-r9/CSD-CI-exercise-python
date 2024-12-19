@@ -6,7 +6,7 @@ from operator import mul
 class ISBN:
 
     def validate(self, number):
-        digits = self.sanitize_input(number)
+        digits = [int(c) for c in self.sanitize_input(number)]
         if len(digits) != 13:
             return False
 
