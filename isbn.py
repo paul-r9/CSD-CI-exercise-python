@@ -27,4 +27,5 @@ class ISBN:
         Remove dashes and spaces from input.
         """
         value = value.replace("-", "")
+        value = value.replace(" ", "")
         return value

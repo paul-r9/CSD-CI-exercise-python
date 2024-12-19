@@ -11,6 +11,16 @@ def test_valid_isbn13():
     # Assert
     assert result
 
+# Uncomment when implementation is ready:
+# def test_invalid_isbn13():
+#     # Arrange
+#     sut = ISBN()
+
+#     # Act
+#     result = sut.validate("9780470059028")
+
+#     # Assert
+#     assert not result
 
 def test_invalid_isbn13_checksum_wrong():
     # Arrange
@@ -32,6 +42,17 @@ def test_sanitize_remove_dashes():
 
     # Assert
     assert result == "9780135957059"
+
+
+def test_sanitize_remove_spaces():
+    # Arrange
+    sut = ISBN()
+
+    # Act
+    result = sut.sanitize_input("978 0 131 49505 0")
+
+    # Assert
+    assert result == "9780131495050"
 
 
 def test_invalid_isbn13_is_too_short():
