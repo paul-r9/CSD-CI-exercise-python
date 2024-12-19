@@ -62,20 +62,18 @@ def test_invalid_isbn13_is_too_long():
     assert not result
 
 
-def test_valid_ISBN10():
+@pytest.mark.parametrize(
+        "value",
+        [
+            "0201485672",
+            "0439-42089-X"
+        ]
+)
+def test_valid_ISBN10(value):
 
     sut = ISBN()
 
-    result = sut.validateISBN10("0201485672")
-
-    assert result
-
-
-def test_valid_ISBN10_X_at_end():
-
-    sut = ISBN()
-
-    result = sut.validateISBN10("0439-42089-X")
+    result = sut.validateISBN10(value)
 
     assert result
 
