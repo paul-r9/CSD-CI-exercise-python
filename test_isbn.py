@@ -1,5 +1,7 @@
 from isbn import ISBN
 
+import pytest
+
 
 def test_valid_isbn13():
     # Arrange
@@ -23,26 +25,23 @@ def test_invalid_isbn13_checksum_wrong():
     assert not result
 
 
-def test_sanitize_remove_dashes():
+@pytest.mark.parametrize(
+    "value,expected",
+    [
+        ("978-0-13-595705-9", "9780135957059"),
+        ("978 0 131 49505 0", "9780131495050"),
+        ("978 0 13-595705-9", "9780135957059"),
+    ],
+)
+def test_sanitize_input_dashes_and_spaces(value, expected):
     # Arrange
     sut = ISBN()
 
     # Act
-    result = sut.sanitize_input("978-0-13-595705-9")
+    result = sut.sanitize_input(value)
 
     # Assert
-    assert result == "9780135957059"
-
-
-def test_sanitize_remove_spaces():
-    # Arrange
-    sut = ISBN()
-
-    # Act
-    result = sut.sanitize_input("978 0 131 49505 0")
-
-    # Assert
-    assert result == "9780131495050"
+    assert result == expected
 
 
 def test_invalid_isbn13_is_too_short():
@@ -77,3 +76,24 @@ def test_valid_ISBN10_X_at_end():
     result = sut.validateISBN10("0439-42089-X")
 
     assert result
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        "abc-0-13-595705-9",
+        "978 ; === 49505 0",
+        "978 0 🙄3-595705-9",
+    ],
+)
+def test_invalid_isbn13_bad_inputs(value):
+
+    sut = ISBN()
+
+    try:
+        sut.validate(value)
+    except ValueError:
+        # value errors get raised with garbage inputs
+        pass
+    else:
+        assert False, "did not raise expected ValueError exception"
