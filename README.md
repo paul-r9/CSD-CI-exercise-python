@@ -42,6 +42,7 @@ Advanced task:
 
 - [ ] Also validate ISBN-10 strings.
 - [ ] ISBN-10 checksum digit can sometimes be "X"
+- [ ] Research: Do books always begin with 978? Add validation rule if yes.
 - [ ] Add ability to lookup BookInfo by ISBN. ISBN should be validated before doing the Service lookup. Create a Fake that is passed into the ISBN class via constructor injection. The fake will act as an ISBNService that returns BookInfo for a valid ISBN.
 
 
